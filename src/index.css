@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import "tailwindcss";
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+body {
+  background-color: #f4f2ee;
+  font-family: cursive;
+}
+
+.active {
+  background-color: #f29724;
+  color: white;
+  box-shadow: 0 10px 15px -3px #fdba74, 0 4px 6px -4px #fdba74;
+}

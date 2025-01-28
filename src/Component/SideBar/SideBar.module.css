@@ -1,0 +1,19 @@
+.list {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+.list:hover {
+  box-shadow: 0 20px 25px -5px #fff7ed, 0 8px 10px -6px #fff7ed;
+  transform: scale(1.05);
+  transition: all 0.5s ease;
+}/*# sourceMappingURL=SideBar.module.css.map */

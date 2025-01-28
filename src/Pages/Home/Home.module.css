@@ -1,0 +1,32 @@
+.header {
+  background-image: linear-gradient(to right, #F29724, rgba(202, 16, 35, 0.768627451));
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  font-family: "Pacifico", serif;
+}
+
+.category {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+.category .allMeals {
+  background-color: transparent;
+  color: gray;
+  text-transform: capitalize;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid gray;
+  transition: all 0.5s;
+}
+.category .allMeals:hover {
+  background-color: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=Home.module.css.map */
