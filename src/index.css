@@ -10,8 +10,13 @@ body {
   font-family: cursive;
 }
 
-.active {
+.sideBar-links .active {
   background-color: #f29724;
   color: white;
   box-shadow: 0 10px 15px -3px #fdba74, 0 4px 6px -4px #fdba74;
+}
+
+.home-links .active {
+  background-color: black !important;
+  color: white !important;
 }

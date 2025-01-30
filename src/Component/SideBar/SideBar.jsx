@@ -1,7 +1,7 @@
 import { GiMeal } from "react-icons/gi";
 import img from "../../assets/logo-BfNap0Pe.png";
 import styles from "./SideBar.module.scss";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function SideBar() {
   return (
@@ -33,7 +33,7 @@ export default function SideBar() {
         className="sticky hidden md:block top-0 left-0 z-40 w-72 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div className="h-full w-full px-2 py-4 overflow-y-auto bg-white">
+        <div className="h-full w-full px-2 py-4 overflow-y-auto bg-white sideBar-links">
           <ul className="space-y-2 font-medium">
             <li>
               <img src={img} alt="Recipe Logo" className="w-full" />

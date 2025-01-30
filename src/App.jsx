@@ -18,6 +18,10 @@ function App() {
           path: "mealdetails",
           element: <Ingredients />,
         },
+        {
+          path: "category/:",
+          element: <Ingredients />,
+        },
       ],
     },
   ]);

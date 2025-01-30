@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Home.module.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -23,12 +23,17 @@ export default function Home() {
       <header className="mb-10">
         <h1 className={styles.header}>Learn, Cook, Eat Your Food</h1>
       </header>
-      <ul className={styles.category}>
+      <ul className={`${styles.category} home-links`}>
+        <li>
+          <NavLink to={"/"} className={styles.allMeals}>
+            All
+          </NavLink>
+        </li>
         {categories.map((category, i) => (
           <li key={i}>
-            <Link to={"/"} className={styles.allMeals}>
+            <NavLink to={"/"} className={styles.allMeals}>
               {category.strCategory}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
