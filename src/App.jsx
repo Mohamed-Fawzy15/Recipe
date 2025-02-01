@@ -3,6 +3,8 @@ import "./App.css";
 import Home from "./Pages/Home/Home";
 import MainLayout from "./Pages/MainLayout/MainLayout";
 import Ingredients from "./Pages/Ingredients/Ingredients";
+import ProtectedRoutes from "./Component/ProtectedRoutes/ProtectedRoutes";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   const routes = createBrowserRouter([
@@ -15,12 +17,18 @@ function App() {
           element: <Home />,
         },
         {
-          path: "mealdetails",
-          element: <Ingredients />,
-        },
-        {
-          path: "category/:",
-          element: <Ingredients />,
+          path: "mealdetails/:productId",
+          element: (
+            <ProtectedRoutes>
+              <Ingredients />
+            </ProtectedRoutes>
+          ),
+          children: [
+            {
+              path: "*",
+              element: <NotFound />,
+            },
+          ],
         },
       ],
     },

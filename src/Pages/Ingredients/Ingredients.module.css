@@ -1,1 +1,75 @@
-/*# sourceMappingURL=Ingredients.module.css.map */
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0px;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .ingredients {
+    flex-direction: row;
+  }
+}
+.ingredients.header {
+  margin: 0px 10px;
+  overflow: hidden;
+  display: flex;
+}
+.ingredients .title {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3rem;
+  margin: 10px 0px;
+}
+.ingredients .img {
+  width: 100%;
+  border-radius: 20px;
+}
+.ingredients .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.ingredients .youtubeBtn {
+  background-color: #dc2626;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  gap: 10px;
+}
+.ingredients .sourceBtn {
+  background-color: #21ba75;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  gap: 10px;
+}
+.ingredients .ingredientsCard {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  height: auto;
+}
+.ingredients .ingredientsCard .ingredientsHeader {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  border-bottom: solid 4px #e5e7eb;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.ingredients .ingredientsCard .ingredientsDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: solid 2px #e5e7eb;
+}
+.ingredients .ingredientsCard .ingredientsDetails:last-child {
+  border-bottom: none;
+}/*# sourceMappingURL=Ingredients.module.css.map */

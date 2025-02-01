@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import styles from "./Home.module.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -6,6 +6,9 @@ import Product from "../../Component/Product/Product";
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
+  const location = useLocation();
+  const categoryName =
+    new URLSearchParams(location.search).get("category") || "";
 
   const getCatgories = async () => {
     await axios
@@ -21,23 +24,39 @@ export default function Home() {
   return (
     <div className="my-10">
       <header className="mb-10">
-        <h1 className={styles.header}>Learn, Cook, Eat Your Food</h1>
+        <h1 className={`${styles.header} Pacifico`}>
+          Learn, Cook, Eat Your Food
+        </h1>
       </header>
       <ul className={`${styles.category} home-links`}>
         <li>
-          <NavLink to={"/"} className={styles.allMeals}>
+          <NavLink
+            to={""}
+            className={({ isActive }) =>
+              isActive && categoryName === ""
+                ? `${styles.allMeals} active`
+                : `${styles.allMeals} `
+            }
+          >
             All
           </NavLink>
         </li>
         {categories.map((category, i) => (
           <li key={i}>
-            <NavLink to={"/"} className={styles.allMeals}>
+            <NavLink
+              to={`/?category=${category.strCategory}`}
+              className={({ isActive }) =>
+                isActive && categoryName === category.strCategory
+                  ? `${styles.allMeals} active`
+                  : `${styles.allMeals} `
+              }
+            >
               {category.strCategory}
             </NavLink>
           </li>
         ))}
       </ul>
-      <Product />
+      <Product selectedCategory={categoryName} />
     </div>
   );
 }

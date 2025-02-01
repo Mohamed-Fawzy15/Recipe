@@ -2,8 +2,15 @@ import { GiMeal } from "react-icons/gi";
 import img from "../../assets/logo-BfNap0Pe.png";
 import styles from "./SideBar.module.scss";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function SideBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleSideBar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <button
@@ -11,7 +18,8 @@ export default function SideBar() {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        onClick={handleSideBar}
+        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       >
         <span className="sr-only">Open sidebar</span>
         <svg
@@ -28,9 +36,12 @@ export default function SideBar() {
           />
         </svg>
       </button>
+
       <aside
         id="default-sidebar"
-        className="sticky hidden md:block top-0 left-0 z-40 w-72 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        className={`fixed md:sticky top-0 left-0 z-40 w-72 h-screen transition-transform ${
+          isOpen ? " translate-x-0" : "-translate-x-full"
+        } md:translate-x-0`}
         aria-label="Sidebar"
       >
         <div className="h-full w-full px-2 py-4 overflow-y-auto bg-white sideBar-links">
@@ -39,19 +50,19 @@ export default function SideBar() {
               <img src={img} alt="Recipe Logo" className="w-full" />
             </li>
             <li className="w-full">
-              <NavLink to={""} className={styles.list}>
-                <GiMeal className="inline mx-3" />
+              <NavLink to={""} className={`${styles.list} active`}>
+                <GiMeal className="inline mx-3 " />
                 meal
               </NavLink>
             </li>
             <li className="w-full my-5">
-              <NavLink to={"ingredient"} className={styles.list}>
+              <NavLink to={"ingradient"} className={styles.list}>
                 <GiMeal className="inline mx-3" />
                 ingredient
               </NavLink>
             </li>
             <li className="w-full">
-              <NavLink to={"area"} className={styles.list}>
+              <NavLink to={"meal"} className={styles.list}>
                 <GiMeal className="inline mx-3" />
                 area
               </NavLink>
@@ -59,6 +70,13 @@ export default function SideBar() {
           </ul>
         </div>
       </aside>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black opacity-50 md:hidden"
+          onClick={handleSideBar}
+        ></div>
+      )}
     </>
   );
 }

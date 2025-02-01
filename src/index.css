@@ -10,6 +10,10 @@ body {
   font-family: cursive;
 }
 
+.Pacifico {
+  font-family: "Pacifico", serif;
+}
+
 .sideBar-links .active {
   background-color: #f29724;
   color: white;

@@ -1,11 +1,10 @@
 .header {
-  background-image: linear-gradient(to right, #F29724, rgba(202, 16, 35, 0.768627451));
+  background-image: linear-gradient(to right, #f29724, rgba(202, 16, 35, 0.768627451));
   color: transparent;
   -webkit-background-clip: text;
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 2.5rem;
-  font-family: "Pacifico", serif;
 }
 
 .category {
