@@ -23,12 +23,14 @@ function App() {
               <Ingredients />
             </ProtectedRoutes>
           ),
-          children: [
-            {
-              path: "*",
-              element: <NotFound />,
-            },
-          ],
+        },
+        {
+          path: "notfound",
+          element: <NotFound />,
+        },
+        {
+          path: "*",
+          element: <NotFound />,
         },
       ],
     },

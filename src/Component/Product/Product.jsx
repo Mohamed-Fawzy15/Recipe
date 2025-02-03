@@ -7,11 +7,11 @@ export default function Product({ selectedCategory }) {
 
   const getProducts = async () => {
     let apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-    console.log(selectedCategory !== "");
     if (selectedCategory !== "") {
       console.log(selectedCategory);
       apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${selectedCategory}`;
     }
+
     await axios
       .get(apiUrl)
       .then((res) => setProducts(res.data.meals))

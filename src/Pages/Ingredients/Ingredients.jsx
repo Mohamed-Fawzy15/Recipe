@@ -7,6 +7,9 @@ import styles from "./Ingredients.module.scss";
 
 export default function Ingredients() {
   const { productId } = useParams();
+  console.log("Product ID from useParams:", productId);
+  console.log(productId);
+
   const [mealDetails, setMealDetails] = useState({});
 
   const getProductDetails = async () => {
